@@ -69,8 +69,20 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.right * _speed * horizontalInput * Time.deltaTime);
-        transform.Translate(Vector3.up * _speed * verticalInput * Time.deltaTime);
+        if (isSpeedBoostActive)
+        {
+            transform.Translate(Vector3.right * _speed * horizontalInput * Time.deltaTime * 1.5f);
+            transform.Translate(Vector3.up * _speed * verticalInput * Time.deltaTime * 1.5f);
+        }
+        else
+        {
+            transform.Translate(Vector3.right * _speed * horizontalInput * Time.deltaTime);
+            transform.Translate(Vector3.up * _speed * verticalInput * Time.deltaTime);
+        }
+
+
+
+
         if (transform.position.y > 0)
         {
             transform.position = new Vector3(transform.position.x, 0, 0);
@@ -91,6 +103,8 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(9.4f, transform.position.y, 0);
         }
 
+
+
     }
 
     public void TripleShotPowerupOn()
@@ -104,5 +118,21 @@ public class Player : MonoBehaviour
         // suspend execution for 5 seconds
         yield return new WaitForSeconds(5.0f);
         canTripleShoot = false;
+    }
+
+
+
+    public bool isSpeedBoostActive = false;
+
+    public void SpeedPowerupOn()
+    {
+        isSpeedBoostActive = true;
+        StartCoroutine(SpeedPowerDownRoutine());
+    }
+
+    public IEnumerator SpeedPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        isSpeedBoostActive = false;
     }
 }

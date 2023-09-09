@@ -60,6 +60,7 @@ public class Powerup : MonoBehaviour
                 else if (powerupId == 2)
                 {
                     // enable shields 
+                    player.EnableSheilds();
                 }
 
 

@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     public bool canTripleShoot = false;
     public int lives = 3; 
-
+    public bool shieldsActive = false;
+ 
 
 
 
@@ -15,6 +16,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject _ExplosionPrefab;
+
+    [SerializeField]
+    private GameObject _shieldGameObject;
 
 
     // _fireRate is 0.25f
@@ -118,11 +122,29 @@ public class Player : MonoBehaviour
         // substract 1 life from the player 
         // if lives < 1 (meaning 0)
         // destroy the objects 
+
+        // if player has shields
+        // do nothing 
+
+
+        if (shieldsActive == true) {
+            shieldsActive = false;
+            _shieldGameObject.SetActive(false); 
+
+            // wanna stop the damage function right now 
+            return;
+        }
+
         lives--;
         if (lives < 1) { 
             Instantiate(_ExplosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+    }
+
+    public void EnableSheilds() {
+        shieldsActive = true;
+        _shieldGameObject.SetActive(true); 
     }
 
 

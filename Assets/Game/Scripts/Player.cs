@@ -5,10 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool canTripleShoot = false;
+    public int lives = 3; 
+
+
+
 
     [SerializeField]
     private GameObject _laserPrefab;
 
+    [SerializeField]
+    private GameObject _ExplosionPrefab;
 
 
     // _fireRate is 0.25f
@@ -106,6 +112,19 @@ public class Player : MonoBehaviour
 
 
     }
+
+    public void Damage() 
+    {
+        // substract 1 life from the player 
+        // if lives < 1 (meaning 0)
+        // destroy the objects 
+        lives--;
+        if (lives < 1) { 
+            Instantiate(_ExplosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+    }
+
 
     public void TripleShotPowerupOn()
     {

@@ -24,7 +24,6 @@ public class Powerup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
         // access the player 
         // turn the trible shot bool to true
         // destroy our selves 

@@ -512,6 +512,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1676134358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676134360}
+  - component: {fileID: 1676134359}
+  m_Layer: 0
+  m_Name: Spanw_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1676134359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676134358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0a7536094eb7e40aaa30dfb6282d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShipPrefab: {fileID: 7662095155218364552, guid: 08bdfbf204924a343ab5ae5092c74a5d, type: 3}
+  powerups:
+  - {fileID: 3230359086648549286, guid: 92195d36faff5444db28d0cd3dde891a, type: 3}
+  - {fileID: 2099616240129161870, guid: b12dad3865e1d4e4d8fd5d17a7605466, type: 3}
+  - {fileID: 6292925699845086372, guid: 3871f9daa7c4c994dac610b37d1345ae, type: 3}
+--- !u!4 &1676134360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676134358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.896683, y: -0.015028432, z: -0.05105247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996188683
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,3 +981,4 @@ SceneRoots:
   - {fileID: 7749184233804836660}
   - {fileID: 3666059391884862977}
   - {fileID: 109771919773210486}
+  - {fileID: 1676134360}
